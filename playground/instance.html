@@ -14,14 +14,18 @@
         //객체로 변수에 정의하고, 오브젝트 생성후 새로운 변수에 넣어주는 방식 
         var options = {
             el: '#app'
-
         }
-        var vm = new Vue(options);
+        var vm = new Vue(options); 
 
         //변수를 생성해서, 생성한 객체를 바로 변수에 넣는 방식 -> 가독성 좋음
         var vm = new Vue({
-            el: '#app'
+            el: '#app',
+            data: {
+                message: 'hi'
+            },
+            created: function(){
 
+            }
         });
     </script>
 
