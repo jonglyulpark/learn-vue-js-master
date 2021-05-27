@@ -28,6 +28,7 @@ export default {
       console.log(this.username, this.password);
       var url = 'https://jsonplaceholder.typicode.com/users';
       var data = {
+         
         username : this.username,
         password : this.password
       }

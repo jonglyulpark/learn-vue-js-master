@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div id="app">
+            <lowComponent1 v-on:></lowComponent1>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var low1 = {
+                template : '<button v-on:click="low1">click me</button>',
+                methods: {
+                    low1: function () {
+                        this.$emit('pass');
+                    }
+                }
+            }
+            var low2 = {
+                template: 
+            }
+            /* 내가 하려고 하는것
+                 [상위컴포넌트 1개]
+            1 event emit        2 props
+                위로            밑으로
+            [하위 컴포넌트1]   [하위컴포넌트2]  [하위컴포넌트3]
+                                     3 eventBus 하위컴포넌트간 데이터이동      
+
+            */
+            new Vue({
+                el: '#app',
+                components: {
+                    'lowComponent1' : low1,
+                    'lowComponent2' : low2
+                },
+                methods:{
+                    low1: function(){
+                        comsole.log('testlow1');
+                    },
+                    low2: function () {
+                        this.num += 1;
+                        comsole.log('testlow2');
+                    },
+                },
+                data:{
+                    num:1
+                }
+
+            });
+
+
+        </script>
+</body>
+</html>
